@@ -26,7 +26,20 @@ python3, pytorch 1.7.0 or higher, torchvision 0.8.0 or higher
 
 ### To run the experiments with the default hyper-parameters (might get slightly sub-optimal performance)
 
-- To run the experiment for Rotated MNIST: For example, target domain 1 (15 degree rotated) and seed 0
+```
+python -m scripts.train --data_dir [data_dir] --algorithm [algorithm] --seed [seed] --dataset [dataset] --train_envs [source_env] --test_envs [target_env]
+```
+
+Where:
+- [data_dir] is the /pat/to/your/data/directory
+- [algorithm] is any of the algorithm reported in our paper, namely KL, ERM, PERM, DANN, MMD, CORAL, WD.
+- [seed] is the random seed (0,1,2).
+- [dataset] is any of the dataset reported in the paper: RotatedMNIST, SVHNMNIST, MNISTUSPS, VisDA17, etc.
+    - If RotatedMNIST: [source_env] is 0 and [target_env] is either 1, 2, 3, 4 or 5.
+    - If SVHNMNIST: [source_env] is 0 (SVHN) and [target_env] is 1 (MNIST).
+    - If MNISTUSPS: [source_env] is 0 (MNIST) and [target_env] is 1 (USPS) or vice versa.
+    - If VisDA17: [source_env] is 0 and [target_env] is 1.
+
 
 ### Alternatively, you can also do a full sweep to find the best hyper-parameters as we did
 
