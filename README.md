@@ -32,7 +32,7 @@ python3, pytorch 1.7.0 or higher, torchvision 0.8.0 or higher
 
 ```
 python -m scripts.sweep launch \
-    --datasets RotatedMNIST 
+    --datasets RotatedMNIST \ 
     --algorithms KL \
     --output_dir ./results_sweep \
     --data_dir /path/to/your/data/ \
