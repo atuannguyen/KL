@@ -15,20 +15,11 @@ from loss import *
 
 ALGORITHMS = [
     'ERM',
-    'IRM',
-    'GroupDRO',
-    'Mixup',
-    'MLDG',
+    'PERM',
     'CORAL',
     'MMD',
     'DANN',
-    'CDANN',
-    'MTL',
-    'SagNet',
-    'ARM',
-    'VREx',
-    'RSC',
-    'SD',
+    'WD',
     'KL'
 ]
 
@@ -247,99 +238,6 @@ class KL(Algorithm):
 
         K = 1 - 0.05 * preds.shape[1]
         preds = preds*K + 0.05
-        return preds
-
-class KLUP(Algorithm):
-    """
-    KLUP
-    """
-
-    def __init__(self, input_shape, num_classes, num_domains, hparams):
-        super(KLUP, self).__init__(input_shape, num_classes, num_domains,
-                                  hparams)
-        self.featurizer = networks.Featurizer(input_shape, self.hparams, probabilistic=True)
-        self.classifier = networks.Classifier(
-            self.featurizer.n_outputs,
-            num_classes,
-            self.hparams['nonlinear_classifier'])
-
-        cls_lr = 100*self.hparams["lr"] if hparams['nonlinear_classifier'] else self.hparams["lr"]
-
-
-        self.optimizer = torch.optim.Adam(
-            #list(self.featurizer.parameters()) + list(self.classifier.parameters()),
-            [{'params': self.featurizer.parameters(), 'lr': self.hparams["lr"]},
-                {'params': self.classifier.parameters(), 'lr': cls_lr}],
-            lr=self.hparams["lr"],
-            weight_decay=self.hparams['weight_decay']
-        )
-        self.num_samples = hparams['num_samples']
-        self.kl_reg = hparams['kl_reg']
-        self.kl_reg_aux = hparams['kl_reg_aux']
-        self.augment_softmax = hparams['augment_softmax']
-
-    def update(self, minibatches, unlabeled=None):
-        x = torch.cat([x for x,y in minibatches])
-        y = torch.cat([y for x,y in minibatches])
-
-        x_target = torch.cat(unlabeled)
-
-        total_x = torch.cat([x,x_target])
-        total_z_params = self.featurizer(total_x)
-        z_dim = int(total_z_params.shape[-1]/2)
-        total_z_mu = total_z_params[:,:z_dim]
-        total_z_sigma = F.softplus(total_z_params[:,z_dim:]) + 0.1 
-
-        z_mu, z_sigma = total_z_mu[:x.shape[0]], total_z_sigma[:x.shape[0]]
-        z_mu_target, z_sigma_target = total_z_mu[x.shape[0]:], total_z_sigma[x.shape[0]:]
-
-        z_dist = dist.Independent(dist.normal.Normal(z_mu,z_sigma),1)
-        z = z_dist.rsample()
-
-        preds = torch.softmax(self.classifier(z),1)
-        if self.augment_softmax != 0.0:
-            K = 1 - self.augment_softmax * preds.shape[1]
-            preds = preds*K + self.augment_softmax
-        loss = F.nll_loss(torch.log(preds),y) 
-
-        mix_coeff = x.new_ones(x.shape[0]) / x.shape[0]
-        mix_coeff_target = x_target.new_ones(x_target.shape[0]) / x_target.shape[0]
-
-        #reg = kl_upper(z_mu,z_sigma,mix_coeff,z_mu_target,z_sigma_target,mix_coeff_target) \
-        reg = kl_upper(z_mu_target,z_sigma_target,mix_coeff_target,z_mu,z_sigma,mix_coeff) \
-                #+ kl_lower(z_mu_target,z_sigma_target,mix_coeff_target,z_mu,z_sigma,mix_coeff)
-
-        # moment matching
-        m1 = torch.sum(z_mu * mix_coeff[:,None],0)
-        m2 = torch.sum((z_mu**2+z_sigma**2)*mix_coeff[:,None],0)
-        var =  m2 - m1**2 + 1e-10
-        m1_target = torch.sum(z_mu_target * mix_coeff_target[:,None],0)
-        m2_target = torch.sum((z_mu_target**2+z_sigma_target**2)*mix_coeff_target[:,None],0)
-        var_target =  m2_target - m1_target**2 + 1e-10
-        reg2 = 0.5*(torch.log(var) - torch.log(var_target) + (var_target+(m1-m2)**2)/var - 1).sum()
-
-        obj = loss + self.kl_reg*(reg+reg2)/2
-
-        self.optimizer.zero_grad()
-        obj.backward()
-        self.optimizer.step()
-
-        return {'loss': loss.item(), 'reg': reg.item(), 'reg2': reg2.item()}
-
-    def predict(self, x):
-        z_params = self.featurizer(x)
-        z_dim = int(z_params.shape[-1]/2)
-        z_mu = z_params[:,:z_dim]
-        z_sigma = F.softplus(z_params[:,z_dim:]) +0.1
-
-        z_dist = dist.Independent(dist.normal.Normal(z_mu,z_sigma),1)
-        
-        preds = 0.0
-        for s in range(self.num_samples):
-            z = z_dist.rsample()
-            preds += F.softmax(self.classifier(z),1)
-        preds = preds/self.num_samples
-
         return preds
 
 
@@ -642,114 +540,5 @@ class CORAL(AbstractMMD):
         super(CORAL, self).__init__(input_shape, num_classes,
                                          num_domains, hparams, gaussian=False)
 
-
-class AbstractPMMD(PERM):
-    """
-    Perform ERM while matching the pair-wise domain feature distributions
-    using MMD (abstract class)
-    """
-    def __init__(self, input_shape, num_classes, num_domains, hparams, gaussian):
-        super(AbstractPMMD, self).__init__(input_shape, num_classes, num_domains,
-                                  hparams)
-        if gaussian:
-            self.kernel_type = "gaussian"
-        else:
-            self.kernel_type = "mean_cov"
-
-    def my_cdist(self, x1, x2):
-        x1_norm = x1.pow(2).sum(dim=-1, keepdim=True)
-        x2_norm = x2.pow(2).sum(dim=-1, keepdim=True)
-        res = torch.addmm(x2_norm.transpose(-2, -1),
-                          x1,
-                          x2.transpose(-2, -1), alpha=-2).add_(x1_norm)
-        return res.clamp_min_(1e-30)
-
-    def gaussian_kernel(self, x, y, gamma=[0.001, 0.01, 0.1, 1, 10, 100,
-                                           1000]):
-        D = self.my_cdist(x, y)
-        K = torch.zeros_like(D)
-
-        for g in gamma:
-            K.add_(torch.exp(D.mul(-g)))
-
-        return K
-
-    def mmd(self, x, y):
-        if self.kernel_type == "gaussian":
-            Kxx = self.gaussian_kernel(x, x).mean()
-            Kyy = self.gaussian_kernel(y, y).mean()
-            Kxy = self.gaussian_kernel(x, y).mean()
-            return Kxx + Kyy - 2 * Kxy
-        else:
-            mean_x = x.mean(0, keepdim=True)
-            mean_y = y.mean(0, keepdim=True)
-            cent_x = x - mean_x
-            cent_y = y - mean_y
-            cova_x = (cent_x.t() @ cent_x) / (len(x) - 1)
-            cova_y = (cent_y.t() @ cent_y) / (len(y) - 1)
-
-            mean_diff = (mean_x - mean_y).pow(2).mean()
-            cova_diff = (cova_x - cova_y).pow(2).mean()
-
-            return mean_diff + cova_diff
-
-    def update(self, minibatches, unlabeled=None):
-        objective = 0
-        penalty = 0
-        nmb = len(minibatches)
-
-        features, classifs, targets = [], [], []
-        for (x,y) in minibatches:
-            z_params = self.featurizer(x)
-            z_dim = int(z_params.shape[-1]/2)
-            z_mu = z_params[:,:z_dim]
-            z_sigma = F.softplus(z_params[:,z_dim:])
-            z_dist = dist.Independent(dist.normal.Normal(z_mu,z_sigma),1)
-            z = z_dist.rsample()
-            features.append(z)
-            classifs.append(self.classifier(z))
-            targets.append(y)
-        
-        features_target = []
-        for x in unlabeled:
-            z_params = self.featurizer(x)
-            z_dim = int(z_params.shape[-1]/2)
-            z_mu = z_params[:,:z_dim]
-            z_sigma = F.softplus(z_params[:,z_dim:])
-            z_dist = dist.Independent(dist.normal.Normal(z_mu,z_sigma),1)
-            z = z_dist.rsample()
-            features_target.append(z)
-
-        total_features = features+features_target
-        total_d = len(total_features)
-
-        for i in range(nmb):
-            objective += F.cross_entropy(classifs[i], targets[i])
-        for i in range(total_d):
-            for j in range(i + 1, total_d):
-                penalty += self.mmd(total_features[i], total_features[j])
-
-        objective /= nmb
-        if nmb > 1:
-            penalty /= (total_d * (total_d - 1) / 2)
-
-        self.optimizer.zero_grad()
-        (objective + (self.hparams['mmd_gamma']*penalty)).backward()
-        self.optimizer.step()
-
-        if torch.is_tensor(penalty):
-            penalty = penalty.item()
-
-        return {'loss': objective.item(), 'penalty': penalty}
-
-
-class PMMD(AbstractPMMD):
-    """
-    MMD using Gaussian kernel
-    """
-
-    def __init__(self, input_shape, num_classes, num_domains, hparams):
-        super(PMMD, self).__init__(input_shape, num_classes,
-                                          num_domains, hparams, gaussian=True)
 
 
