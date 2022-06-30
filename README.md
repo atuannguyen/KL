@@ -41,5 +41,7 @@ python -m scripts.sweep launch \
 ```
 
 You can set the --datasets flag to other datasets such as SVHNMNIST, MNISTUSPS, VisDA17, etc.
+
 You can set the --algorithms flag to other algorithms in the paper such as ERM, PERM, DANN, MMD, CORAL, WD.
+
 The --gpus flag include all possible gpus of your system.
