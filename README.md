@@ -32,10 +32,14 @@ python3, pytorch 1.7.0 or higher, torchvision 0.8.0 or higher
 
 ```
 python -m scripts.sweep launch \
-    --datasets RotatedMNIST #may include other datasets such as SVHNMNIST, MNISTUSPS, VisDA17, etc \
-    --algorithms KL #may include other algorithms in the paper such as ERM, PERM, DANN, MMD, CORAL, WD \
+    --datasets RotatedMNIST 
+    --algorithms KL \
     --output_dir ./results_sweep \
     --data_dir /path/to/your/data/ \
-    --gpus 0 1 2 3 4 5 6 7 #list all possible gpus of your system \
+    --gpus 0 1 2 3 4 5 6 7  \
     --command_launcher multi_gpu 
 ```
+
+You can set the --datasets flag to other datasets such as SVHNMNIST, MNISTUSPS, VisDA17, etc.
+You can set the --algorithms flag to other algorithms in the paper such as ERM, PERM, DANN, MMD, CORAL, WD.
+The --gpus flag include all possible gpus of your system.
