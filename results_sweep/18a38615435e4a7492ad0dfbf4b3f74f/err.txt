@@ -1,0 +1,16 @@
+/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torchvision/transforms/functional.py:936: UserWarning: Argument resample is deprecated and will be removed since v0.10.0. Please, use interpolation instead
+  "Argument resample is deprecated and will be removed since v0.10.0. Please, use interpolation instead"
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib64/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/homes/55/tuan/KL/scripts/train.py", line 236, in <module>
+    step_vals = algorithm.update(minibatches_device, uda_device)
+  File "/homes/55/tuan/KL/algorithms.py", line 229, in update
+    obj.backward()
+  File "/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torch/tensor.py", line 245, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torch/autograd/__init__.py", line 147, in backward
+    allow_unreachable=True, accumulate_grad=True)  # allow_unreachable flag
+KeyboardInterrupt
