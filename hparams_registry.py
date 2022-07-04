@@ -113,11 +113,15 @@ def _hparams(algorithm, dataset, random_seed):
 
     if algorithm == 'KL':
         _hparam('augment_softmax', 0.0, lambda r: r.choice([0.0,0.01,0.05]))
-        if dataset in SMALL_IMAGES:
-            _hparam('kl_reg', 0.3, lambda r: 0.3)
-            _hparam('kl_reg_aux', 0.1, lambda r: r.choice([0.1]))
+        if dataset == 'RotatedMNIST':
+            _hparam('kl_reg', 0.2, lambda r: 0.2)
+            _hparam('kl_reg_aux', 0.2, lambda r: 0.2)
             _hparam('batch_size', 256, lambda r: 256)
-        elif dataset in MEDIUM_IMAGES:
+        if dataset == 'MNISTUSPS':
+            _hparam('kl_reg', 0.1, lambda r: 0.1)
+            _hparam('kl_reg_aux', 0.1, lambda r: 0.1)
+            _hparam('batch_size', 256, lambda r: 256)
+        elif dataset == 'SVHNMNIST':
             _hparam('kl_reg', 0.055, lambda r: 0.3)
             _hparam('kl_reg_aux', 0.055, lambda r: r.choice([0.0]))
             _hparam('batch_size', 256, lambda r: 256)
