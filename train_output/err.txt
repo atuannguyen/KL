@@ -1,134 +1,0 @@
-  0%|          | 0/182040794 [00:00<?, ?it/s]  0%|          | 14336/182040794 [00:00<28:42, 105674.34it/s]  0%|          | 34816/182040794 [00:00<23:29, 129135.25it/s]  0%|          | 69632/182040794 [00:00<16:33, 183219.18it/s]  0%|          | 115712/182040794 [00:00<12:35, 240783.09it/s]  0%|          | 182272/182040794 [00:00<09:19, 324882.10it/s]  0%|          | 263168/182040794 [00:00<07:22, 410354.00it/s]  0%|          | 385024/182040794 [00:00<05:24, 559695.70it/s]  0%|          | 574464/182040794 [00:01<03:44, 809990.30it/s]  0%|          | 827392/182040794 [00:01<02:41, 1119275.39it/s]  1%|          | 1178624/182040794 [00:01<01:57, 1540928.82it/s]  1%|          | 1497088/182040794 [00:01<01:44, 1733596.29it/s]  1%|1         | 1996800/182040794 [00:01<01:17, 2313262.59it/s]  1%|1         | 2584576/182040794 [00:01<01:02, 2880256.08it/s]  2%|1         | 3426304/182040794 [00:01<00:46, 3820404.05it/s]  2%|2         | 4527104/182040794 [00:02<00:35, 5030145.48it/s]  3%|3         | 5978112/182040794 [00:02<00:26, 6617143.07it/s]  4%|4         | 7897088/182040794 [00:02<00:19, 8725593.17it/s]  6%|5         | 10226688/182040794 [00:02<00:15, 11078703.98it/s]  7%|7         | 13030400/182040794 [00:02<00:12, 13696308.32it/s]  8%|8         | 14940160/182040794 [00:02<00:12, 13651416.70it/s]  9%|9         | 17173504/182040794 [00:02<00:11, 14536622.57it/s] 11%|#1        | 20115456/182040794 [00:03<00:09, 17973515.25it/s] 12%|#2        | 22002688/182040794 [00:03<00:08, 18171012.62it/s] 13%|#3        | 23886848/182040794 [00:03<00:08, 17986542.86it/s] 14%|#4        | 25731072/182040794 [00:03<00:11, 14027900.25it/s] 15%|#4        | 27288576/182040794 [00:03<00:11, 13386944.74it/s] 16%|#5        | 28731392/182040794 [00:03<00:11, 12969802.00it/s] 17%|#7        | 30950400/182040794 [00:03<00:10, 15081373.03it/s] 18%|#8        | 33593344/182040794 [00:03<00:08, 17974913.87it/s] 20%|#9        | 35507200/182040794 [00:04<00:09, 15543284.80it/s] 20%|##        | 37192704/182040794 [00:04<00:10, 13852008.86it/s] 21%|##1       | 38689792/182040794 [00:04<00:10, 13631888.87it/s] 22%|##2       | 40128512/182040794 [00:04<00:10, 13544299.08it/s] 23%|##3       | 41997312/182040794 [00:04<00:09, 14780014.22it/s] 24%|##3       | 43531264/182040794 [00:04<00:10, 12638851.86it/s] 25%|##4       | 44878848/182040794 [00:04<00:11, 11540189.52it/s] 25%|##5       | 46098432/182040794 [00:05<00:12, 11286230.98it/s] 26%|##6       | 47591424/182040794 [00:05<00:11, 12073908.23it/s] 27%|##7       | 49432576/182040794 [00:05<00:09, 13288661.01it/s] 28%|##8       | 51874816/182040794 [00:05<00:08, 15786659.28it/s] 29%|##9       | 53494784/182040794 [00:05<00:14, 9035864.02it/s]  31%|###       | 55977984/182040794 [00:05<00:11, 11127971.03it/s] 32%|###2      | 58436608/182040794 [00:05<00:09, 12796913.41it/s] 34%|###3      | 61044736/182040794 [00:06<00:07, 15516768.37it/s] 35%|###4      | 63236096/182040794 [00:06<00:07, 16741175.48it/s] 36%|###5      | 65157120/182040794 [00:06<00:06, 16734279.12it/s] 37%|###6      | 67299328/182040794 [00:06<00:06, 17519337.75it/s] 38%|###8      | 69556224/182040794 [00:06<00:05, 18827138.68it/s] 39%|###9      | 71550976/182040794 [00:06<00:05, 18750673.69it/s] 41%|####      | 74051584/182040794 [00:06<00:05, 19308496.24it/s] 42%|####1     | 76211200/182040794 [00:06<00:05, 19848427.26it/s] 43%|####3     | 78288896/182040794 [00:06<00:05, 20074530.57it/s] 44%|####4     | 80557056/182040794 [00:07<00:04, 20777916.88it/s] 45%|####5     | 82660352/182040794 [00:07<00:05, 19408368.49it/s] 46%|####6     | 84634624/182040794 [00:07<00:06, 15984129.10it/s] 48%|####8     | 87405568/182040794 [00:07<00:05, 18799670.48it/s] 49%|####9     | 89425920/182040794 [00:07<00:05, 18148308.97it/s] 50%|#####     | 91338752/182040794 [00:07<00:05, 18041268.32it/s] 51%|#####1    | 93697024/182040794 [00:07<00:04, 19055204.38it/s] 53%|#####2    | 95801344/182040794 [00:07<00:04, 19507693.07it/s] 54%|#####3    | 98164736/182040794 [00:08<00:04, 19830710.87it/s] 55%|#####5    | 100353024/182040794 [00:08<00:04, 20361665.05it/s] 56%|#####6    | 102413312/182040794 [00:08<00:04, 19861446.66it/s] 57%|#####7    | 104417280/182040794 [00:08<00:04, 19131311.45it/s] 59%|#####8    | 106807296/182040794 [00:08<00:03, 19705950.70it/s] 60%|#####9    | 109024256/182040794 [00:08<00:05, 12529952.40it/s] 61%|######1   | 111630336/182040794 [00:08<00:05, 13968980.78it/s] 63%|######2   | 114568192/182040794 [00:09<00:03, 17123417.52it/s] 64%|######4   | 116608000/182040794 [00:09<00:03, 16845379.65it/s] 65%|######5   | 118518784/182040794 [00:09<00:03, 17216927.80it/s] 66%|######6   | 120497152/182040794 [00:09<00:03, 17829049.01it/s] 67%|######7   | 122409984/182040794 [00:09<00:03, 17699373.59it/s] 68%|######8   | 124270592/182040794 [00:09<00:03, 17346010.55it/s] 69%|######9   | 126425088/182040794 [00:09<00:03, 17623950.23it/s] 70%|#######   | 128231424/182040794 [00:09<00:03, 14814455.92it/s] 71%|#######1  | 129807360/182040794 [00:09<00:03, 14045912.13it/s] 72%|#######2  | 131276800/182040794 [00:10<00:03, 13713917.23it/s] 73%|#######3  | 132939776/182040794 [00:10<00:03, 14386878.32it/s] 74%|#######3  | 134584320/182040794 [00:10<00:03, 14924829.30it/s] 75%|#######5  | 136752128/182040794 [00:10<00:02, 16579177.61it/s] 76%|#######6  | 138925056/182040794 [00:10<00:02, 17987480.53it/s] 77%|#######7  | 140759040/182040794 [00:10<00:02, 16335391.85it/s] 79%|#######8  | 143008768/182040794 [00:10<00:02, 17967774.90it/s] 80%|#######9  | 145398784/182040794 [00:10<00:01, 19565897.12it/s] 81%|########  | 147405824/182040794 [00:10<00:01, 19146384.24it/s] 82%|########2 | 149824512/182040794 [00:11<00:01, 20533918.13it/s] 83%|########3 | 151911424/182040794 [00:11<00:01, 16986856.45it/s] 85%|########4 | 154468352/182040794 [00:11<00:01, 18965869.36it/s] 86%|########5 | 156480512/182040794 [00:11<00:01, 18930038.67it/s] 87%|########7 | 158475264/182040794 [00:11<00:01, 19189739.52it/s] 88%|########8 | 160809984/182040794 [00:11<00:01, 20287380.12it/s] 89%|########9 | 162888704/182040794 [00:11<00:00, 19182408.11it/s] 91%|######### | 165439488/182040794 [00:11<00:00, 20863597.62it/s] 92%|#########2| 167570432/182040794 [00:11<00:00, 20282704.13it/s] 93%|#########3| 169630720/182040794 [00:12<00:00, 18572681.87it/s] 94%|#########4| 171532288/182040794 [00:12<00:00, 15193643.58it/s] 95%|#########5| 173170688/182040794 [00:12<00:00, 14976792.16it/s] 96%|#########6| 174879744/182040794 [00:12<00:00, 15430025.64it/s] 97%|#########7| 176707584/182040794 [00:12<00:00, 16169860.10it/s] 98%|#########8| 179138560/182040794 [00:12<00:00, 18239524.63it/s]100%|#########9| 181261312/182040794 [00:12<00:00, 19067946.01it/s]182041600it [00:12, 14084351.05it/s]                               
-  0%|          | 0/64275384 [00:00<?, ?it/s]  0%|          | 14336/64275384 [00:00<10:51, 98658.58it/s]  0%|          | 37888/64275384 [00:00<07:32, 141844.76it/s]  0%|          | 75776/64275384 [00:00<05:24, 197929.95it/s]  0%|          | 139264/64275384 [00:00<03:33, 300458.32it/s]  0%|          | 217088/64275384 [00:00<02:43, 392715.13it/s]  1%|          | 342016/64275384 [00:00<01:53, 561951.76it/s]  1%|          | 506880/64275384 [00:00<01:23, 762123.24it/s]  1%|1         | 700416/64275384 [00:01<01:06, 955015.50it/s]  2%|1         | 1003520/64275384 [00:01<00:47, 1331616.19it/s]  2%|2         | 1440768/64275384 [00:01<00:33, 1881223.30it/s]  3%|3         | 1995776/64275384 [00:01<00:24, 2512970.98it/s]  4%|4         | 2671616/64275384 [00:01<00:19, 3211300.27it/s]  6%|5         | 3601408/64275384 [00:01<00:14, 4241158.42it/s]  8%|7         | 4940800/64275384 [00:01<00:10, 5801375.37it/s] 10%|#         | 6677504/64275384 [00:02<00:07, 7769290.02it/s] 14%|#3        | 8795136/64275384 [00:02<00:05, 9959669.08it/s] 17%|#7        | 11158528/64275384 [00:02<00:04, 11997680.33it/s] 21%|##        | 13394944/64275384 [00:02<00:03, 14332384.80it/s] 25%|##4       | 15950848/64275384 [00:02<00:02, 17007859.66it/s] 28%|##7       | 17743872/64275384 [00:02<00:02, 16957792.56it/s] 31%|###1      | 20186112/64275384 [00:02<00:02, 18450766.36it/s] 35%|###4      | 22371328/64275384 [00:02<00:02, 19333286.96it/s] 38%|###8      | 24472576/64275384 [00:03<00:02, 19644281.56it/s] 41%|####1     | 26470400/64275384 [00:03<00:02, 16249459.50it/s] 44%|####3     | 28210176/64275384 [00:03<00:02, 14779337.08it/s] 46%|####6     | 29782016/64275384 [00:03<00:02, 14225015.69it/s] 50%|####9     | 31820800/64275384 [00:03<00:02, 15657201.08it/s] 53%|#####3    | 34254848/64275384 [00:03<00:01, 17887097.24it/s] 56%|#####6    | 36127744/64275384 [00:03<00:01, 17394234.65it/s] 60%|######    | 38704128/64275384 [00:03<00:01, 19490630.59it/s] 63%|######3   | 40712192/64275384 [00:03<00:01, 19422268.21it/s] 67%|######6   | 42745856/64275384 [00:04<00:01, 19608574.05it/s] 70%|#######   | 45168640/64275384 [00:04<00:00, 20928536.69it/s] 74%|#######3  | 47289344/64275384 [00:04<00:00, 19387932.04it/s] 78%|#######7  | 49896448/64275384 [00:04<00:00, 21234921.58it/s] 81%|########1 | 52063232/64275384 [00:04<00:00, 15540401.10it/s] 84%|########3 | 53860352/64275384 [00:04<00:00, 12788824.32it/s] 86%|########6 | 55370752/64275384 [00:05<00:00, 12407233.44it/s] 88%|########8 | 56767488/64275384 [00:05<00:00, 12453323.22it/s] 91%|######### | 58439680/64275384 [00:05<00:00, 13439086.22it/s] 94%|#########4| 60663808/64275384 [00:05<00:00, 15489312.07it/s] 97%|#########6| 62324736/64275384 [00:05<00:00, 12927051.02it/s]64275456it [00:05, 11533290.92it/s]                              
-Traceback (most recent call last):
-  File "/usr/lib64/python3.6/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/usr/lib64/python3.6/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/homes/55/tuan/KL/scripts/train.py", line 236, in <module>
-    step_vals = algorithm.update(minibatches_device, uda_device)
-  File "/homes/55/tuan/KL/algorithms.py", line 223, in update
-    return {'loss': loss.item(), 'kl': kl.item(), 'kl_aux': kl_aux.item()}
-KeyboardInterrupt
-Traceback (most recent call last):
-  File "/usr/lib64/python3.6/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/usr/lib64/python3.6/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/homes/55/tuan/KL/scripts/train.py", line 253, in <module>
-    acc = misc.accuracy(algorithm, loader, weights, device)
-  File "/homes/55/tuan/KL/lib/misc.py", line 118, in accuracy
-    p = network.predict(x)
-  File "/homes/55/tuan/KL/algorithms.py", line 235, in predict
-    z = z_dist.rsample()
-  File "/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torch/distributions/independent.py", line 88, in rsample
-    return self.base_dist.rsample(sample_shape)
-  File "/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torch/distributions/normal.py", line 68, in rsample
-    eps = _standard_normal(shape, dtype=self.loc.dtype, device=self.loc.device)
-  File "/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torch/distributions/utils.py", line 48, in _standard_normal
-    return torch.empty(shape, dtype=dtype, device=device).normal_()
-KeyboardInterrupt
-  0%|          | 0/6579383 [00:00<?, ?it/s]  0%|          | 9216/6579383 [00:00<03:14, 33812.01it/s]  1%|          | 41984/6579383 [00:00<01:17, 84132.91it/s]  2%|1         | 99328/6579383 [00:00<00:45, 141034.88it/s]  3%|3         | 215040/6579383 [00:01<00:25, 251429.42it/s]  6%|6         | 410624/6579383 [00:01<00:14, 417131.22it/s] 13%|#2        | 838656/6579383 [00:01<00:07, 804361.12it/s] 26%|##5       | 1688576/6579383 [00:01<00:03, 1551038.84it/s] 51%|#####1    | 3384320/6579383 [00:02<00:01, 3018189.69it/s] 98%|#########8| 6472704/6579383 [00:02<00:00, 5582990.28it/s]6580224it [00:02, 2656854.96it/s]                             
-  0%|          | 0/1831726 [00:00<?, ?it/s]  1%|          | 9216/1831726 [00:00<00:54, 33609.75it/s]  2%|2         | 38912/1831726 [00:00<00:23, 77359.84it/s]  5%|5         | 94208/1831726 [00:00<00:12, 133796.80it/s] 11%|#1        | 206848/1831726 [00:01<00:06, 242592.26it/s] 24%|##3       | 431104/1831726 [00:01<00:03, 448936.87it/s] 48%|####7     | 878592/1831726 [00:01<00:01, 849208.80it/s] 97%|#########7| 1778688/1831726 [00:01<00:00, 1640505.28it/s]1831936it [00:01, 950472.36it/s]                              
-Traceback (most recent call last):
-  File "/usr/lib64/python3.6/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/usr/lib64/python3.6/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/homes/55/tuan/KL/scripts/train.py", line 118, in <module>
-    args.test_envs, hparams)
-  File "/homes/55/tuan/KL/datasets.py", line 200, in __init__
-    dataset_tr = eval(envs)(root, train=True, transform=transform, download=True)
-KeyboardInterrupt
-Traceback (most recent call last):
-  File "/usr/lib64/python3.6/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/usr/lib64/python3.6/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/homes/55/tuan/KL/scripts/train.py", line 253, in <module>
-    acc = misc.accuracy(algorithm, loader, weights, device)
-  File "/homes/55/tuan/KL/lib/misc.py", line 115, in accuracy
-    for x, y in loader:
-  File "/homes/55/tuan/KL/lib/fast_data_loader.py", line 70, in __iter__
-    yield next(self._infinite_iterator)
-  File "/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torch/utils/data/dataloader.py", line 517, in __next__
-    data = self._next_data()
-  File "/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torch/utils/data/dataloader.py", line 1182, in _next_data
-    idx, data = self._get_data()
-  File "/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torch/utils/data/dataloader.py", line 1148, in _get_data
-    success, data = self._try_get_data()
-  File "/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torch/utils/data/dataloader.py", line 986, in _try_get_data
-    data = self._data_queue.get(timeout=timeout)
-  File "/usr/lib64/python3.6/multiprocessing/queues.py", line 113, in get
-    return _ForkingPickler.loads(res)
-  File "/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torch/multiprocessing/reductions.py", line 282, in rebuild_storage_fd
-    fd = df.detach()
-  File "/usr/lib64/python3.6/multiprocessing/resource_sharer.py", line 57, in detach
-    with _resource_sharer.get_connection(self._id) as conn:
-  File "/usr/lib64/python3.6/multiprocessing/resource_sharer.py", line 87, in get_connection
-    c = Client(address, authkey=process.current_process().authkey)
-  File "/usr/lib64/python3.6/multiprocessing/connection.py", line 497, in Client
-    answer_challenge(c, authkey)
-  File "/usr/lib64/python3.6/multiprocessing/connection.py", line 736, in answer_challenge
-    message = connection.recv_bytes(256)         # reject large message
-  File "/usr/lib64/python3.6/multiprocessing/connection.py", line 220, in recv_bytes
-    buf = self._recv_bytes(maxlength)
-  File "/usr/lib64/python3.6/multiprocessing/connection.py", line 411, in _recv_bytes
-    buf = self._recv(4)
-  File "/usr/lib64/python3.6/multiprocessing/connection.py", line 383, in _recv
-    chunk = read(handle, remaining)
-KeyboardInterrupt
-/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torchvision/transforms/functional.py:936: UserWarning: Argument resample is deprecated and will be removed since v0.10.0. Please, use interpolation instead
-  "Argument resample is deprecated and will be removed since v0.10.0. Please, use interpolation instead"
-Traceback (most recent call last):
-  File "/usr/lib64/python3.6/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/usr/lib64/python3.6/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/homes/55/tuan/KL/scripts/train.py", line 236, in <module>
-    step_vals = algorithm.update(minibatches_device, uda_device)
-  File "/homes/55/tuan/KL/algorithms.py", line 192, in update
-    z_dist = dist.Independent(dist.normal.Normal(z_mu,z_sigma),1)
-  File "/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torch/distributions/normal.py", line 50, in __init__
-    super(Normal, self).__init__(batch_shape, validate_args=validate_args)
-  File "/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torch/distributions/distribution.py", line 52, in __init__
-    if not constraint.check(getattr(self, param)).all():
-KeyboardInterrupt
-/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torchvision/transforms/functional.py:936: UserWarning: Argument resample is deprecated and will be removed since v0.10.0. Please, use interpolation instead
-  "Argument resample is deprecated and will be removed since v0.10.0. Please, use interpolation instead"
-/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torchvision/transforms/functional.py:936: UserWarning: Argument resample is deprecated and will be removed since v0.10.0. Please, use interpolation instead
-  "Argument resample is deprecated and will be removed since v0.10.0. Please, use interpolation instead"
-Traceback (most recent call last):
-  File "/usr/lib64/python3.6/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/usr/lib64/python3.6/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/homes/55/tuan/KL/scripts/train.py", line 236, in <module>
-    step_vals = algorithm.update(minibatches_device, uda_device)
-  File "/homes/55/tuan/KL/algorithms.py", line 223, in update
-    return {'loss': loss.item(), 'kl': kl.item(), 'kl_aux': kl_aux.item()}
-KeyboardInterrupt
-/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torchvision/transforms/functional.py:936: UserWarning: Argument resample is deprecated and will be removed since v0.10.0. Please, use interpolation instead
-  "Argument resample is deprecated and will be removed since v0.10.0. Please, use interpolation instead"
-/homes/55/tuan/installations/tnew/lib64/python3.6/site-packages/torchvision/transforms/functional.py:936: UserWarning: Argument resample is deprecated and will be removed since v0.10.0. Please, use interpolation instead
-  "Argument resample is deprecated and will be removed since v0.10.0. Please, use interpolation instead"
-Traceback (most recent call last):
-  File "/usr/lib64/python3.6/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/usr/lib64/python3.6/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/homes/55/tuan/KL/scripts/train.py", line 120, in <module>
-    raise NotImplementedError
-NotImplementedError
-Traceback (most recent call last):
-  File "/usr/lib64/python3.6/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/usr/lib64/python3.6/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/homes/55/tuan/KL/scripts/train.py", line 118, in <module>
-    args.test_envs, hparams)
-  File "/homes/55/tuan/KL/datasets.py", line 183, in __init__
-    super().__init__(self.dir, test_envs, hparams['data_augmentation'], hparams)
-  File "/homes/55/tuan/KL/datasets.py", line 133, in __init__
-    environments = [f.name for f in os.scandir(root) if f.is_dir()]
-FileNotFoundError: [Errno 2] No such file or directory: '/scratch/local/ssd/tuan/data/visda17/'
